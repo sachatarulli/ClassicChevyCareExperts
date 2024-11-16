@@ -149,6 +149,13 @@ body {
   margin: 1.5% 0%;
   align-items: center;
 }
+.imagenagranda {
+    transition: transform 0.3s ease;
+}
+
+.imagenagranda:hover {
+    transform: scale(1.15);
+}
 
 @media all and (max-width: 650px) {
   .contenido-footer {
@@ -157,4 +164,82 @@ body {
   .contenido-footer div {
     padding: 1%;
   }
+  .carousel-inner img {
+    width: 100%;
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Hace que la imagen cubra el contenedor sin deformarse */
+    transform: none; /* Elimina la transformación aplicada */
 }
+}
+/* Sección Testimonios */
+.testimonios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #E4DCD2;
+  }
+  
+  .testimonios .imagen-testimonio {
+    flex: 1;
+    max-width: 50%;
+    padding: 1rem;
+  }
+  
+  .testimonios .imagen-testimonio img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .testimonios .testimonios-textos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .testimonios .testimonio-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonios .testimonio-card p {
+    font-size: 1rem;
+    color: #4B4B4B;
+    margin-bottom: 0.1rem;
+  }
+  
+  .testimonios .testimonio-card .autor {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #7C3506;
+    text-align: right;
+  }
+  
+  /* Responsivo */
+  @media screen and (max-width: 768px) {
+    .testimonios {
+      flex-direction: column;
+    }
+  
+    .testimonios .imagen-testimonio {
+      max-width: 100%;
+    }
+  
+    .testimonios .testimonios-textos {
+      flex: none;
+    }
+    .testimonios {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        background-color: #E4DCD2;
+      }
+  }
