@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrusel de Imágenes</title>
+  <title>Classic Chevy Care Experts</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap" />
   <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/stylesNosotros.css">
+  <link rel="stylesheet" href="css/servicioscss.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
@@ -18,9 +21,9 @@
             <input type="checkbox" id="menu">
             <label for="menu"> ☰ </label>
             <ul class="list-menu">
-                <li class="text-menu selected"><a href="index.html" target="blank_">Inicio</a></li>
+                <li class="text-menu"><a href="index.html" target="blank_">Inicio</a></li>
                 <li class="text-menu"><a href="nosotros.html" target="blank_">Nosotros</a></li>
-                <li class="text-menu"><a href="servicios.html" target="blank_"> Servicios</a></li>
+                <li class="text-menu selected"><a href="servicios.html" target="blank_"> Servicios</a></li>
                 <li class="text-menu"><a href="presupuesto.html" target="blank_"> Presupuesto</a></li>
                 <li class="text-menu"><a href="index.html" target="blank_">Contacto</a></li>
             </ul>
@@ -33,7 +36,7 @@
     <div class="overlay"></div>
     <div class="inner">
       <h3 class="subtitle" style="margin: 0px;">Mantenimiento preventivo</h3>
-      <a href="#" class="btn">Conoce más</a>
+      <a href="#mantenimientopreventivo" class="btn">Conoce más</a>
     </div>
   </div>
   <div class="carousel-cell">
@@ -41,7 +44,7 @@
     <div class="overlay"></div>
     <div class="inner">
       <h3 class="subtitle" style="margin: 0px;">Restauración</h3>
-      <a href="#" class="btn">Conoce más</a>
+      <a href="#restauraciones." class="btn">Conoce más</a>
     </div>
   </div>
   <div class="carousel-cell">
@@ -49,13 +52,134 @@
     <div class="overlay"></div>
     <div class="inner">
       <h3 class="subtitle" style="margin: 0px;">Servicios personalizados</h3>
-      <a href="#" class="btn">Conoce más</a>
+      <a href="#servpersonalizados" class="btn">Conoce más</a>
     </div>
   </div>
 </div>
-    </section>
+  <div class="titulo-trabajos"  id="mantenimientopreventivo">
+    <h2 class="text-center">Mantenimiento preventivo</h2>
+  </div>
+  <div class="mantprev">
+    <div class="manttext">
+        <div class="manttitulo">
+            <h3><b>Mantenimiento preventivo</b></h3>
+        </div>
+        <div class="mantt1">
+            <p>En Nuestro taller, ofrecemos un servicio exhaustivo que abarca desde cambios de aceite y filtros hasta la revisión completa del sistema de frenos y suspensión.<br>
+                Nos aseguramos de que cada componente esté en perfecto estado para que puedas disfrutar tu Chevy.<br>
+                Nuestro equipo de técnicos especializados conoce las especificaciones de cada modelo, por lo que el cuidado de tu vehículo está en manos de verdaderos expertos.
+                <br></p>
+        </div>
+        <div class="mantt2">
+            <p><b>Cambio de aceite y filtros<br>
+                    Revisión de frenos y suspensión<br>
+                    Inspección de sistemas eléctricos<br>
+                    Ajuste de motores y componentes</b></p>
+        </div>
+    </div>
+    <div class="mantimg">
+        <div class="mantimgtop">
+            <img src="img/mant1.jpg" alt="Chevrolet Malibu 64' SS series" class="clickable">
+            <img src="img/mant2.jpg" alt="Motor V8 Chevrolet Impala 62'" class="clickable">
+        </div>
+        <div class="mantimgbot">
+            <img src="img/mant3.jpg" alt="Motor V8 Chevrolet Camaro 66'" class="clickable">
+            <img src="img/mant4.jpg" alt="Motor Chevrolet Chevelle 70'" class="clickable">
+        </div>
+    </div>
+  </div>
 
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="caption"></div>
+  </div>
+  <div class="titulo-trabajos"  id="restauraciones.">
+    <h2 class="text-center">Restauración</h2>
+  </div>
+
+  <div class="gallery-modal" id="galleryModal">
+    <span class="gallery-close" onclick="closeGallery()">&times;</span>
+    <div class="gallery-modal-content">
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <img id="currentImage" src="" alt="Gallery Image">
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+</div>
+
+  <div class="restauraciones">
+    <div class="autosrestaurados">
+      <div class="autorestaurado">
+          <p><b>Chevrolet Malibu 64'</b></p>
+          <img src="img/malibu/malibu0.jpg" alt="Chevrolet Malibu 64'" onclick="openGallery(0)">
+      </div>
+      <div class="autorestaurado">
+          <p><b>Chevrolet Camaro 66'</b></p>
+          <img src="img/camaro/camaro0.jpg" alt="Chevrolet Camaro 66'" onclick="openGallery(1)">
+      </div>
+      <div class="autorestaurado">
+          <p><b>Chevrolet Chevelle 70'</b></p>
+          <img src="img/chevelle/chevelle0.jpg" alt="hevrolet Chevelle 70'" onclick="openGallery(2)">
+      </div>
+  </div>
+    <div class="textorestaura">
+      <div class="textorest">
+        <p class="titutete"><b>Cada Chevy tiene una historia</b><br></p>
+          <p>Nos encargamos de la restauración de interiores, pintura, cromados y todas las piezas mecánicas, utilizando materiales de la más alta calidad para garantizar que tu Chevy se vea y funcione como en el día en que salió de la fábrica.</p>
+      </div>
+      <div class="textorest">
+        <p class="titutete"><b>Clave en la Restauración de tu Chevy</b><br></p>
+          <p>Inspección inicial y evaluación del estado del vehículo
+          Desmontaje y reparación de componentes principales
+          Restauración de interiores y tapicería
+          Aplicación de pintura original y detalles de acabado</p>
+      </div>
+    </div>  
+  </div>
+
+  <div class="titulo-trabajos"  id="servpersonalizados">
+    <h2 class="text-center">Servicios personalizados</h2>
+  </div>
+  <div class="imagen-principal2">
+    <img src="img/camaro/camaro8.jpg" alt="Logo" class="img-fluid">
+    <div class="text-overlay2">
+        <p><b>Si queres añadir un toque único a tu Chevy clásico, ofrecemos servicios personalizados que respetan la esencia original del vehículo pero agregan un estilo propio.<br><br>
+          Modificaciones en la suspensión, instalacion de accesorios “vintage”, personalización de la pintura, trabajamos contigo para hacer realidad tu visión.</b>
+         </p>
+    </div>
+</div>
+
+  <div class="titulo-trabajos">
+    <h2 class="text-center">Consejos</h2>
+  </div>
+  <div class="consejotextos">
+    <div class="consejocont">
+      <div class="consejotitulo">
+        <p><b>Evitar humedad y polvo</b></p>
+      </div>
+      <p class="textoconsejo">Guardar el auto en un lugar limpio y seco, idealmente en un garaje con ventilación. </p>
+      <p class="textoconsejo">Utiliza una cubierta especializada para autos clásicos, que sea respirable, ya que las cubiertas plásticas pueden atrapar humedad y causar corrosión.</p>
+    </div>
+    <div class="consejocont">
+      <div class="consejotitulo">
+        <p><b>Evitar largos periodos sin encender el motor</b></p>
+      </div>
+      <p class="textoconsejo">Arranca el motor al menos una vez cada dos semanas y hacelo andar unas cuadras. Esto ayuda a que el aceite circule y evita problemas en la batería.</p>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="contenido-footer">
+        <div class="text-footer">492766 - 2024 - VIRTUAL</div>
+        <div class="text-footer">Equipo 6</div>
+        <div class="text-footer">PROFESORA LITOVICUIS, PATRICIA CARINA</div>
+        <div class="text-footer">UADE DISEÑO Y DESARROLLO WEB</div>
+    </div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
 <script src="css/nosotros.js"></script>
+<script src="css/serviciosjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
