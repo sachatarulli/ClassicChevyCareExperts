@@ -1,0 +1,111 @@
+* {
+  font-family: "Lora", sans-serif;
+}
+.header {
+  width: 100%;
+  margin: 0px;
+  position: relative;
+  height: auto;
+  background-color: #fffbf6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation {
+  /*establece color de fondo de la linea de los botones*/
+  overflow: hidden;
+  padding: 10px;
+  width: 80%;
+}
+.navigation input {
+  /*no muestra el botón de menu */
+  display: none;
+}
+.navigation label {
+  /*no muestra la etiqueta ☰ */
+  display: none;
+  float: right;
+}
+.list-menu {
+  /*muestra los botones con la disposición horizontal para notebook */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0;
+  padding: 0;
+}
+
+.navigation .list-menu {
+  list-style-type: none; /* Eliminar puntos de los elementos de la lista */
+  padding: 0; /* Eliminar el padding predeterminado */
+}
+
+.text-menu a {
+  text-decoration: none; /* Eliminar subrayado */
+  color: black; /* Cambiar color del texto a negro */
+}
+
+.text-menu a:hover {
+  text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+.text-menu.selected {
+  font-weight: bold;
+}
+
+@media all and (max-width: 650px) {
+  /*cuando el dispositivo es como máximo de 900px*/
+
+  .header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .navigation input:checked ~ ul {
+    /*muestra todas el contenido de todas las etiquetas ul */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: #fffbf6;
+  }
+
+  .list-menu li {
+    /*elimina el margen  de cada botón */
+    margin: 0px;
+    text-align: left;
+  }
+
+  .navigation label {
+    /* dibuja la etiqueta ☰  con formato botón */
+    box-sizing: border-box;
+    display: block;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-right: 3%;
+  }
+
+  .navigation {
+    padding: 0;
+    width: auto;
+  }
+
+  .list-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Coloca el ul justo debajo del nav */
+  }
+
+.header-title {
+  margin-right: 5%;
+    font-size: 1.5rem;
+}
+
+}
+
+.header-title {
+  color: #7c3506;
+  margin-top: 1%;
+}
