@@ -161,7 +161,6 @@
 }
 
 
-/* Estilos del modal */
 .modal {
     display: none; 
     position: fixed; 
@@ -319,4 +318,33 @@ button.next:hover {
     .mantimgbot img {
         max-height: 150px; 
     }
+    .autosrestaurados
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+    }
+    .autorestaurado
+    {
+        margin: 10px;
+    }
+    .textorest {
+        width: 45%; 
+    
+    }
+    .consejotextos
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+    .consejocont {
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+    
+    }
+    
 }
