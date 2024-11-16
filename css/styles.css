@@ -8,7 +8,7 @@ body {
 
 /* Header */
 .header-title {
-    font-size: 2rem;
+    font-size: 2rem;  
     color: #7C3506;
 }
 
@@ -195,6 +195,7 @@ body {
   
   .testimonios .testimonios-textos {
     flex: 1;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -235,11 +236,17 @@ body {
       flex: none;
     }
     .testimonios {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem;
-        background-color: #E4DCD2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background-color: #E4DCD2;
       }
+    .carousel-inner img {
+      width: 100%;
+      height: auto; /* Mantiene la relación de aspecto */
+      object-fit: contain; /* Asegura que toda la imagen sea visible */
+      transform: none; /* Elimina transformaciones en pantallas pequeñas */
+     }
   }
