@@ -3,13 +3,16 @@ body {
     margin: 0;
     padding: 0;
     background: #E4DCD2;
+    box-sizing: border-box;
+    line-height: 1.6;
+  
 }
 .navigation{
   margin-top: 0px;
 }
 .hero-slider {
   width: 100%;
-  height: 600px; /* Altura máxima del carrusel */
+  height: 600px; 
   overflow: hidden;
   position: relative;
 }
@@ -29,7 +32,7 @@ body {
 
 .inner {
   position: absolute;
-  bottom: 50px; /* Ajusta la posición inferior del texto y botón */
+  bottom: 50px; 
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -75,4 +78,61 @@ body {
 
 .flickity-page-dots .dot.is-selected {
   background: #7C3506;
+}
+
+.filas {
+  display: flex;
+  flex-direction: row;
+  width: 100vw; 
+  height: 100vh;
+}
+
+.foto {
+  flex: 1; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6f0505;
+}
+
+.foto img {
+  width: 100%; 
+  height: 100%; 
+  object-fit:cover; 
+  
+}
+
+.parrafo {
+  
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  background-color: #E4DCD2; 
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  justify-content: center;
+
+}
+
+.cuadro {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-family: 'Lora', serif;
+  justify-content: center;
+  width: 75%;
+  align-items: center;
+  border: 0.5vh solid #000000; 
+  height: 75%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}
+.cuadro h3 {
+  color: #7C3506;
+
+}
+.cuadro .content + .title {
+  margin-top: 20px;
 }
