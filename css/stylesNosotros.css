@@ -82,57 +82,77 @@ body {
 
 .filas {
   display: flex;
-  flex-direction: row;
-  width: 100vw; 
-  height: 100vh;
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  width: 100%;
+  height: auto;
+}
+.filasr {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+  width: 100%;
+  height: auto;
 }
 
 .foto {
-  flex: 1; 
-  overflow: hidden; 
+  flex: 1 1 calc(50% - 1rem); 
+  max-width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #6f0505;
+  overflow: hidden;
 }
 
 .foto img {
-  width: 100%; 
-  height: 100%; 
-  object-fit:cover; 
-  
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .parrafo {
-  
-  flex: 1; 
-  display: flex;
-  flex-direction: column;
-  background-color: #E4DCD2; 
+  flex: 1;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
   justify-content: center;
-
+  padding: 10px;
 }
 
 .cuadro {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-family: 'Lora', serif;
-  justify-content: center;
-  width: 75%;
+  display: flex;
   align-items: center;
-  border: 0.5vh solid #000000; 
-  height: 75%;
-  margin: 20px auto;
+  justify-content: center;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-family: 'Lora', serif;
+  width: 40%;
+  border: 0.5vh solid #000000;
+  margin: 3%;
   padding: 20px;
-  background-color: white;
+  background-color: #F1EFEF;
   text-align: center;
 }
+
 .cuadro h3 {
   color: #7C3506;
-
 }
+
 .cuadro .content + .title {
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .foto, .cuadro {
+      flex: 1 1 100%;
+      width: auto;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .filas {
+      flex-direction: column;
+      
+  }
+  .filasr {
+    flex-direction: column-reverse;
+}
 }
