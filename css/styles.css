@@ -6,37 +6,6 @@ body {
   background: #e4dcd2;
 }
 
-/* Header */
-.header-title {
-  font-size: 2rem;
-  color: #7c3506;
-}
-
-.navigation {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.list-menu {
-  list-style-type: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-}
-
-.text-menu {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.text-menu:hover,
-.text-menu.selected {
-  text-decoration: underline;
-}
-
 /* Imagen Principal */
 .imagen-principal {
   position: relative;
@@ -98,7 +67,6 @@ body {
   padding: 20px;
   color: #7c3506;
 }
-
 .trabajos {
   background-color: #e4dcd2;
 }

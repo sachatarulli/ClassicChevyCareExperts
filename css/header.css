@@ -16,8 +16,9 @@
   /*establece color de fondo de la linea de los botones*/
   overflow: hidden;
   padding: 10px;
-  width: 80%;
+  width: 60%;
 }
+
 .navigation input {
   /*no muestra el botón de menu */
   display: none;
@@ -28,11 +29,9 @@
   float: right;
 }
 .list-menu {
-  /*muestra los botones con la disposición horizontal para notebook */
   display: flex;
   justify-content: space-around;
-  margin-top: 0;
-  padding: 0;
+  gap: 1rem;
 }
 
 .navigation .list-menu {
@@ -45,8 +44,9 @@
   color: black; /* Cambiar color del texto a negro */
 }
 
-.text-menu a:hover {
-  text-decoration: underline; /* Subrayar al pasar el mouse */
+.text-menu:hover,
+.text-menu.selected {
+  text-decoration: underline;
 }
 
 .text-menu.selected {
@@ -98,14 +98,15 @@
     top: 100%; /* Coloca el ul justo debajo del nav */
   }
 
-.header-title {
-  margin-right: 5%;
+  .header-title {
+    margin-right: 5%;
     font-size: 1.5rem;
-}
-
+  }
 }
 
 .header-title {
+  font-size: 2rem;
   color: #7c3506;
   margin-top: 1%;
+  margin-bottom: 0.5rem;
 }
