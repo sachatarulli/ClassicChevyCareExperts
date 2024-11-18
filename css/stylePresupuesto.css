@@ -1,10 +1,10 @@
 body {
-    font-family: 'Lora', serif;
-    margin: 0;
-    padding: 0;
-    background: #E4DCD2;
+  font-family: "Lora", serif;
+  margin: 0;
+  padding: 0;
+  background: #e4dcd2;
 }
-.navigation{
+.navigation {
   margin-top: 0px;
 }
 .hero-slider {
@@ -43,9 +43,8 @@ body {
   padding: 5px 15px;
   border-radius: 5px;
 }
-.subtitle h3{
+.subtitle h3 {
   margin: 0px;
-
 }
 .btn {
   display: inline-block;
@@ -58,7 +57,7 @@ body {
 }
 
 .btn:hover {
-  background: #6F2F05;
+  background: #6f2f05;
   border: solid 1px #000;
 }
 
@@ -74,5 +73,55 @@ body {
 }
 
 .flickity-page-dots .dot.is-selected {
-  background: #7C3506;
+  background: #7c3506;
+}
+
+.titulo-presupuesto {
+  background: #fffbf6;
+  width: 100%;
+}
+.titulo-presupuesto h2 {
+  padding: 20px;
+  color: #7c3506;
+}
+
+.box-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  background-color: #fffbf6;
+  border: 2px solid black;
+}
+
+.seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-box {
+  color: #7c3506;
+  text-align: center;
+}
+
+.quantity-display {
+  display: inline-block;
+  width: 30px; /* Ajusta el ancho según tus necesidades */
+  text-align: center;
+  line-height: 1.5; /* Ajusta la altura de línea según tus necesidades */
+  border-top: 1px solid #ced4da; /* Añade un borde en la parte superior */
+  border-bottom: 1px solid #ced4da; /* Añade un borde en la parte inferior */
+  background-color: #f8f9fa; /* Fondo similar al de los botones */
+  padding: 0.375rem 0; /* Ajusta el padding para centrar verticalmente */
+}
+
+#coupon-message {
+  color: red;
+  font-weight: bold;
+}
+#coupon-message.valid {
+  color: green;
 }

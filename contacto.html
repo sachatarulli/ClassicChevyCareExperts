@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap" />
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesNosotros.css">
+    <link rel="stylesheet" href="css/styleContacto.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">Classic Chevy Care Experts</h1>
+        <nav class="navigation">
+            <input type="checkbox" id="menu">
+            <label for="menu"> ☰ </label>
+            <ul class="list-menu">
+                <li class="text-menu"><a href="index.html" target="blank_">Inicio</a></li>
+                <li class="text-menu"><a href="nosotros.html" target="blank_">Nosotros</a></li>
+                <li class="text-menu"><a href="servicios.html" target="blank_"> Servicios</a></li>
+                <li class="text-menu"><a href="presupuesto.html" target="blank_"> Presupuesto</a></li>
+                <li class="text-menu selected"><a href="contacto.html" target="blank_">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="hero-slider" data-carousel style="width: 100%">
+            <div class="carousel-cell">
+                <img src="img/contacto/contacto.jpg" alt="Reserva tu turno">
+                <div class="overlay"></div>
+                <div class="inner">
+                    <a href="#reserva" class="btn">Reserva tu turno ahora</a>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="img/contacto/contacto2.png" alt="Dudas? Contactanos">
+                <div class="overlay"></div>
+                <div class="inner">
+                    <h3 class="subtitle" style="margin: 0px;"></h3>
+                    <a href="#contacto" class="btn">Dudas? Contactanos</a>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="img/contacto/contacto3.jpg" alt="Ubicación">
+                <div class="overlay"></div>
+                <div class="inner">
+                    <a href="#ubicacion" class="btn">Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <div class="titulo-contacto" id="reserva">
+            <h2 class="text-center">Reserva de Turnos</h2>
+        </div>
+        <div class="container">
+            <form id="appointment-form" class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="dni" class="col-form-label">Ingrese su DNI:</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="dni" class="form-control">
+                </div>
+                <div class="col-auto">
+                    <button type="button" id="check-appointment" class="btn btn-primary">Verificar Turno</button>
+                </div>
+            </form>
+            <div id="appointment-info" class="mt-3"></div>
+            <div id="calendar-container" class="mt-3" style="display: none;">
+                <div class="d-flex justify-content-between mb-3">
+                    <button type="button" id="prev-month" class="btn btn-secondary">Mes Anterior</button>
+                    <div id="currentMonth" class="text-center"></div>
+                    <button type="button" id="next-month" class="btn btn-secondary">Mes Siguiente</button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Confirmar Reserva</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="confirmationMessage"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="confirmReservation" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Toast -->
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+                aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Tu reserva ha sido confirmada exitosamente.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de Confirmación de Eliminación -->
+        <div class="modal fade" id="deleteConfirmationModal" tabindex="-1"
+            aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirmar Eliminación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="deleteConfirmationMessage"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="confirmDelete" class="btn btn-danger">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast de Eliminación Exitosa -->
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="deleteSuccessToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+                aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        El turno se eliminó correctamente.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="titulo-contacto" id="contacto">
+            <h2 class="text-center">Contactanos</h2>
+        </div>
+        <div class="container seccion">
+            <div class="box">
+                <p>Si tenes alguna consulta o necesitas mas información sobre nuestros servicios, no dudes en
+                    ponerte en
+                    contacto con nosotros. Completa el formulario a continuación y te responderemos lo antes
+                    posible.
+
+                    Tambien podes encontrarnos en nuestro taller. Revisa el mapa más abajo para obtener la ubicación
+                    exacta y nuestros horarios de atención
+                </p>
+            </div>
+
+            <form id="contact-form" class="row g-3 mt-3">
+                <div class="col-md-6 d-flex align-items-center">
+                    <label for="nombre" class="form-label me-2 fixed-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <label for="apellido" class="form-label me-2 fixed-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <label for="email" class="form-label me-2 fixed-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <label for="telefono" class="form-label me-2 fixed-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" required>
+                </div>
+                <div class="col-12">
+                    <label for="mensaje" class="form-label fixed-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                </div>
+                <div class="col-12 d-flex justify-content-center mb-3">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div class="titulo-contacto" id="ubicacion">
+            <h2 class="text-center">Ubicación</h2>
+        </div>
+        <div class="container seccion mb-3">
+            <div class="row box">
+                <div class="col-md-6">
+                    <img src="img/contacto/mapa.png" alt="Mapa de ubicación" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div><strong>Dirección:</strong> Lima 757, C1073 Cdad. Autónoma de Buenos Aires</div>
+                        <div><strong>Horario de atención:</strong> Lunes a viernes de 10hs a 18hs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="contenido-footer">
+            <div class="text-footer">492766 - 2024 - VIRTUAL</div>
+            <div class="text-footer">Equipo 6</div>
+            <div class="text-footer">PROFESORA LITOVICUIS, PATRICIA CARINA</div>
+            <div class="text-footer">UADE DISEÑO Y DESARROLLO WEB</div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/contacto.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="css/nosotros.js"></script>
+
+</body>
+
+</html>

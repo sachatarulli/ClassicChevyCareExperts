@@ -1,0 +1,64 @@
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar th {
+  background-color: #f2f2f2;
+}
+
+.calendar-day {
+  cursor: pointer;
+}
+
+.calendar-day.disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.calendar-day:hover:not(.disabled) {
+  background-color: #502204;
+  color: white;
+}
+
+.titulo-contacto {
+  background: #fffbf6;
+  width: 100%;
+}
+.titulo-contacto h2 {
+  padding: 20px;
+  color: #7c3506;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  background-color: #fffbf6;
+  border: 2px solid black;
+}
+
+.seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fixed-label {
+  width: 100px; /* Ajusta este valor según tus necesidades */
+}
+
+.selected-date {
+  border: 2px solid #502204; /* Ajusta el color y el grosor del borde según tus necesidades */
+  border-radius: 5px; /* Opcional: añade un borde redondeado */
+}
