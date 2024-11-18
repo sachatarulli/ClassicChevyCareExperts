@@ -234,3 +234,15 @@ $(document).ready(function () {
 
   updateCalendar();
 });
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const submitMessage = document.getElementById("submit-message");
+  submitMessage.textContent =
+    "Gracias por contactarnos, a la brevedad nos estaremos comunicando con usted";
+  submitMessage.classList.add("text-success");
+  setTimeout(() => {
+    submitMessage.textContent = "";
+  }, 5000);
+}
