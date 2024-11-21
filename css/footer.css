@@ -14,9 +14,24 @@ footer {
 
 .contenido-footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   flex: 1;
-  margin: 1.5% 0%;
+  height: 100%;
+}
+
+.logo-footer {
+  padding: 1%;
+}
+
+.logo-footer img {
+  width: 150px;
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.footer-linea {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -26,5 +41,13 @@ footer {
   }
   .contenido-footer div {
     padding: 1%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  .footer-linea {
+    flex-wrap: wrap;
   }
 }
